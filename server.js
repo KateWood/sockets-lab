@@ -13,7 +13,7 @@ webSocketer.on('connection', function(socket) {
 	console.log('a user connected')
 	socket.on('color', function(data) {
 		console.log(data)
-		socket.emit('color', data)
+		webSocketer.emit('color', data)
 	})
 	socket.on('text', function(data) {
 		console.log(data.toUpperCase())
