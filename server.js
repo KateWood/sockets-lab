@@ -14,6 +14,9 @@ webSocketer.on('connection', function(socket) {
 	socket.on('color', function(data) {
 		console.log(data)
 	})
+	socket.on('text', function(data) {
+		console.log(data.toUpperCase())
+	})
 })
 
 httpServer.listen(port, function() {
