@@ -5,13 +5,15 @@
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
 			socket = io()
-			socket.emit('color', 'red')
+			socket.emit('color', 'pink')
 			socket.emit('text', "katie, you're amazing")
 			socket.on('server-message', function(data) {
 				console.log('Server says...', data)
 			})
 			socket.on('color', function(data) {
 				console.log('Server says...', data)
+				var myHotBody = document.querySelector('body')
+				myHotBody.style.backgroundColor = data
 			})
 		</script>
 	</head>
