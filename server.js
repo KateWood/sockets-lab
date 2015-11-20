@@ -9,6 +9,13 @@ app.get('/', function(req, res) {
 	res.sendFile(__dirname + '/public/index.html')
 })
 
+webSocketer.on('connection', function(socket) {
+	console.log('a user connected')
+	socket.on('color', function(data) {
+		console.log(data)
+	})
+})
+
 httpServer.listen(port, function() {
 	console.log('listening on port', port)
 })
